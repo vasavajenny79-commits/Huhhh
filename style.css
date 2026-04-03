@@ -1,0 +1,85 @@
+:root {
+    --bg-color: #f0fff4; /* Pastel Green */
+    --dark-green: #2d6a4f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.container { text-align: center; width: 100%; padding: 20px; z-index: 10; }
+
+h1 { color: var(--dark-green); font-size: 1.8rem; margin-bottom: 10px; }
+.sub { color: #409167; font-size: 1.1rem; margin-bottom: 30px; }
+
+.bunny-card {
+    background: white;
+    padding: 15px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.bunny-img { width: 170px; }
+
+.buttons { display: flex; gap: 20px; justify-content: center; min-height: 100px; position: relative; }
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+#yesBtn { background: #52b788; color: white; z-index: 100; }
+#noBtn { background: #d8f3dc; color: #1b4332; position: relative; }
+
+.celebrate-bunny { width: 200px; animation: spin 3s infinite ease-in-out alternate; }
+.kisses-bunny { width: 150px; border-radius: 15px; margin-top: 10px; }
+
+@keyframes spin {
+    0% { transform: scale(1) rotate(-3deg); }
+    100% { transform: scale(1.1) rotate(3deg); }
+}
+
+.falling-item {
+    position: fixed;
+    top: -10vh;
+    animation: fall linear forwards;
+    z-index: -1;
+}
+
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #409167;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.emojis { font-size: 2.5rem; margin-top: 15px; }
